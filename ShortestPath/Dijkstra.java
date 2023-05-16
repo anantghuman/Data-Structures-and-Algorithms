@@ -24,14 +24,14 @@ public class Dijkstra
             for (int i = 0; i < graph.v[temp].edges.size(); i++)
             {
                 int t = graph.v[temp].edges.get(i);
-                if(!graph.v[t].visited)
-                    queue.offer(t);
                 double d = graph.v[temp].distance + graph.v[temp].getDistance(graph.v[t]);
                 double d2 = graph.v[t].distance;
                 if (d < d2)
                 {
                     graph.v[t].distance = d;
                 }
+                if(!graph.v[t].visited)
+                    queue.offer(t);
             }
         }
     }
